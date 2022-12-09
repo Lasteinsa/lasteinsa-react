@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faHome } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faHome, faPencil } from "@fortawesome/free-solid-svg-icons"
 import Collapsible from "react-collapsible"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
