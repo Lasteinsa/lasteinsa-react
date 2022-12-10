@@ -30,9 +30,20 @@ const RootLayout = () => {
         <div ref={rootRef} id='rootLayout' className={`${isDay? '' : 'dark'}`}>
             {
                 !isDay ?
-                    <Snowfall snowflakeCount={100}/>
+                    <Snowfall
+                        style={{
+                            position: 'fixed',
+                            width: '100vw',
+                            height: '100vh',
+                        }}
+                        snowflakeCount={100}/>
                     :
                     <Snowfall
+                        style={{
+                            position: 'fixed',
+                            width: '100vw',
+                            height: '100vh',
+                        }}
                         color="#FFA1CF"
                         snowflakeCount={110}/>
             }
