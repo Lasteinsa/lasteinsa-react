@@ -29,12 +29,12 @@ const Navigation = () => {
             <ul className="hidden sm:flex">
                 {
                     NavbarData.map(({name, path, icon}) => (
-                            <NavLink key={name} to={path}>
-                                <li className="mx-4 my-2 px-4 py-2 rounded-lg text-white hover:bg-purple-500">
+                            <li className="mx-4 my-2 px-4 py-2 rounded-lg text-white">
+                                <NavLink key={name} to={path} className={({isActive}) => isActive? 'px-4 py-2 rounded-lg bg-purple-400' : ''}>
                                     <FontAwesomeIcon className="mr-2" icon={icon}/>
                                     {name}
-                                </li>
-                            </NavLink>
+                                </NavLink>
+                            </li>
                     ))
                 }
             </ul>
@@ -49,8 +49,8 @@ const Navigation = () => {
                 <ul className="sm:hidden">
                     {
                         NavbarData.map(({name, path, icon}) => (
-                            <NavLink key={name} to={path}>
-                                <li className="mx-4 my-2 px-4 py-2 rounded-lg text-white hover:text-purple-200">
+                            <NavLink key={name} to={path} className={({isActive}) => isActive? 'px-4 py-2 rounded-lg bg-purple-400' : ''}>
+                                <li className="mx-4 my-2 px-4 py-2 rounded-lg text-white">
                                     <FontAwesomeIcon className="mr-2" icon={icon}/>
                                     {name}
                                 </li>
