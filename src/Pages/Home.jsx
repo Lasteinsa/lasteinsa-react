@@ -10,6 +10,7 @@ import uchiagehanabi from "../assets/images/uchiagehanabi.jfif"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import BottomLine from "../components/BottomLine"
 
 const Home = ({title}) => {
     document.title  = `${title} | Lasteinsa`
@@ -68,7 +69,8 @@ const Home = ({title}) => {
             </motion.p>
 
             <p className="text-center text-3xl mt-12">Hobbies</p>
-            <p className="text-center text-lg mt-2">coder and audiophile [new] </p>
+            <BottomLine/>
+            <p className="text-center text-lg mt-4">coder and audiophile [newbie] </p>
 
             <p className="text-center mt-4">I code in : </p>
             <div className="mt-2 flex place-content-center">
@@ -78,7 +80,7 @@ const Home = ({title}) => {
                     ))
                 }
             </div>
-            <p className="text-center mt-4">Currently : </p>
+            <p className="text-center mt-4">Currently doing on : </p>
             <div className="mt-2 flex place-content-center">
                 {
                     framework.map((data) => (
@@ -87,8 +89,9 @@ const Home = ({title}) => {
                 }
             </div>
 
-            <p className="text-center text-3xl mt-12">Favorite Music</p>
-            <p className="text-center text-lg mt-2">talk is cheap. show me your playlist !</p>
+            <p className="text-center text-3xl mt-16">Favorite Music</p>
+            <BottomLine/>
+            <p className="text-center text-lg mt-4">talk is cheap. show me your playlist !</p>
 
             <div className="flex items-center mt-4 p-8">
                 <Swiper className="mx-2"
