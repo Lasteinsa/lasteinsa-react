@@ -1,53 +1,19 @@
 import { motion } from "framer-motion"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Navigation, Pagination } from "swiper"
-
-import hakujitsu from "../assets/images/hakujitsu.jfif"
-import halzion from "../assets/images/halzion.jfif"
-import ibegyou from "../assets/images/ibegyou.jfif"
-import uchiagehanabi from "../assets/images/uchiagehanabi.jfif"
+import { framework, musicAlbumData, programmingLanguage } from "../utilities/Data";
+import BottomLine from "../components/BottomLine"
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import BottomLine from "../components/BottomLine"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
+
 
 const Home = ({title}) => {
     document.title  = `${title} | Lasteinsa`
 
-    const musicAlbumData = [
-        {
-            title: "I beg You",
-            artist: "Aimer",
-            url: ibegyou
-        },
-        {
-            title: "Fireworks",
-            artist: "Daoko, Kenshi Yonezu",
-            url: uchiagehanabi
-        },
-        {
-            title: "Halzion",
-            artist: "Yoasobi",
-            url: halzion
-        },
-        {
-            title: "Daylight",
-            artist: "King GNU",
-            url: hakujitsu
-        },
-    ]
-
-    const programmingLanguage = [
-        "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-        "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/kotlin/kotlin.png"
-    ]
-
-    const framework = [
-        "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
-        "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-    ]
-    
     return(
         <div className="dark:text-white">
             <div className="flex place-content-center my-1">
@@ -68,7 +34,11 @@ const Home = ({title}) => {
                     Here is a place where I show to the world
             </motion.p>
 
-            <p className="text-center text-3xl mt-12">Hobbies</p>
+            <p className="text-center text-3xl mt-12">
+                <FontAwesomeIcon className="mx-2" icon={faGamepad}/>
+                Hobbies
+                <FontAwesomeIcon className="mx-2" icon={faCode}/>
+            </p>
             <BottomLine/>
             <p className="text-center text-lg mt-4">coder and audiophile [newbie] </p>
 
@@ -89,7 +59,10 @@ const Home = ({title}) => {
                 }
             </div>
 
-            <p className="text-center text-3xl mt-16">Favorite Music</p>
+            <p className="text-center text-3xl mt-16">
+                <FontAwesomeIcon icon={faMusic} className="mx-2" />
+                Favorite Music
+            </p>
             <BottomLine/>
             <p className="text-center text-lg mt-4">talk is cheap. show me your playlist !</p>
 
