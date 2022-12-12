@@ -1,6 +1,7 @@
 import { faPaintBrush, faScaleBalanced, faSitemap } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import BottomLine from "../components/BottomLine"
+import { motion } from "framer-motion"
 
 const Project = () => {
     return(
@@ -12,7 +13,12 @@ const Project = () => {
             <BottomLine/>
             <p className="text-center text-lg mt-4">Let's see what I made!</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 mx-2 my-4">
-                <div className="m-2">
+                <motion.div 
+                    className="m-2"
+                    transition={{delay: 0.3}}
+                    initial={{opacity: 0, x:-100}}
+                    whileInView={{opacity: 1, x:0}}
+                    viewport={{ once: true }}>
                     <p className="text-center text-3xl mt-8">
                         <FontAwesomeIcon icon={faSitemap} className="mx-2" />
                         Gasturah
@@ -40,8 +46,13 @@ const Project = () => {
                         Github Link : 
                         <a target="_blank" href="https://github.com/Lasteinsa/app_package_gasturah"> Gasturah</a>
                     </p>
-                </div>
-                <div className="m-2">
+                </motion.div>
+                <motion.div 
+                    className="m-2"
+                    transition={{delay: 0.5}}
+                    initial={{opacity: 0, x:100}}
+                    whileInView={{opacity: 1, x:0}}
+                    viewport={{ once: true }}>
                     <p className="text-center text-3xl mt-8">
                         <FontAwesomeIcon icon={faScaleBalanced} className="mx-2" />
                         Smart Scaling
@@ -67,7 +78,7 @@ const Project = () => {
                         Github Link : 
                         <a target="_blank" href="https://github.com/Lasteinsa/app_timbanganpintar"> Smart Scaling</a>
                     </p>
-                </div>
+                </motion.div>
             </div>
         </div>
     )

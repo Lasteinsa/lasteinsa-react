@@ -19,17 +19,19 @@ const Home = ({title}) => {
         <div className="dark:text-white">
             <div className="flex place-content-center my-1">
                 <motion.p
-                className="text-5xl text-bold border-b-4 border-b-sky-400"
-                    initial="hidden"
-                    whileInView="visible"
+                    className="text-5xl text-bold border-b-4 border-b-sky-400"
+                    transition={{delay: 0.3}}
+                    initial={{opacity: 0, y:-50}}
+                    whileInView={{opacity: 1, y:0}}
                     viewport={{ once: true }}>
                         Konnichiwa~
                 </motion.p>
             </div>
             <motion.p
                 className="flex place-content-center text-center my-2 dark:text-white"
-                initial="hidden"
-                whileInView="visible"
+                transition={{delay: 0.8}}
+                initial={{opacity: 0, x:50}}
+                whileInView={{opacity: 1, x:0}}
                 viewport={{ once: true }}>
                     Welcome to my personal homepage. <br />
                     Here is a place where I show to the world
@@ -38,8 +40,9 @@ const Home = ({title}) => {
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
             <motion.p
-                initial="hidden"
-                whileInView="visible"
+                transition={{delay: 1}}
+                initial={{opacity: 0, x:-50}}
+                whileInView={{opacity: 1, x:0}}
                 viewport={{ once: true }}>
 
                 <p className="text-center text-3xl mt-24">
@@ -75,10 +78,11 @@ const Home = ({title}) => {
                     </Link>
                 </div>
             </motion.p>
-            
+
             <motion.p
-                initial="hidden"
-                whileInView="visible"
+                transition={{delay: 0.7}}
+                initial={{opacity: 0, y: -50}}
+                whileInView={{opacity: 1, y: 0}}
                 viewport={{ once: true }}>
                     
                 <p className="text-center text-3xl mt-16">

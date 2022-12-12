@@ -1,4 +1,5 @@
 import { TypeAnimation } from "react-type-animation"
+import { motion } from "framer-motion"
 
 const About = ({title}) => {
     document.title  = `${title} | Lasteinsa`
@@ -28,18 +29,15 @@ const About = ({title}) => {
 
     return(
         <div className="min-h-screen dark:text-white">
-            <div className="flex place-content-center">
-                <p className="text-5xl text-bold">
-                    I am
-                    <span className="mx-2 border-b-3 border-b-sky-500">
-                        <TypeAnimation
-                            sequence={Lasteinsa}
-                            cursor={true}
-                            wrapper='span'
-                            repeat={Infinity}
-                            />
-                    </span>
-                </p>
+            <div className="text-center text-5xl text-bold">
+                    I am...
+                <TypeAnimation
+                    className="mx-2 border-b-3 border-b-sky-500"
+                    sequence={Lasteinsa}
+                    cursor={true}
+                    wrapper='div'
+                    repeat={Infinity}
+                    />
             </div>
 
             <p className="text-center text-3xl mt-12">
@@ -54,7 +52,11 @@ const About = ({title}) => {
             <div className="grid grid-cols-1 lg:grid-cols-3 mt-8">
                 {
                     aboutInfo.map(({title, icon, text, link}, i) => (
-                        <div key={i} 
+                        <motion.div key={i} 
+                            transition={{delay: 0.2}}
+                            initial={{opacity: 0, x:100}}
+                            whileInView={{opacity: 1, x:0}}
+                            viewport={{ once: true }}
                             className="grid grid-cols-1 sm:grid-cols-2 m-2 py-4 px-2 rounded-xl  
                                         bg-gradient-to-r from-purple-500 to-pink-500">
                             <div className="flex place-content-center py-4 rounded-xl bg-slate-200">
@@ -64,7 +66,7 @@ const About = ({title}) => {
                                 <p className="text-2xl mb-4">{title}</p>
                                 <a target="_blank" className="border-b-4" href={link}>{text}</a>
                             </div>
-                        </div>
+                        </motion.div>
                     ))
                 }
             </div>
