@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 const Home = ({title}) => {
@@ -34,67 +35,89 @@ const Home = ({title}) => {
                     Here is a place where I show to the world
             </motion.p>
 
-            <p className="text-center text-3xl mt-12">
-                <FontAwesomeIcon className="mx-2" icon={faGamepad}/>
-                Hobbies
-                <FontAwesomeIcon className="mx-2" icon={faCode}/>
-            </p>
-            <BottomLine/>
-            <p className="text-center text-lg mt-4">coder and audiophile [newbie] </p>
+            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-            <p className="text-center mt-4">I code in : </p>
-            <div className="mt-2 flex place-content-center">
-                {
-                    programmingLanguage.map((data) => (
-                        <img src={data} className="mx-2" alt="language" width='50px' />
-                    ))
-                }
-            </div>
-            <p className="text-center mt-4">Currently doing on : </p>
-            <div className="mt-2 flex place-content-center">
-                {
-                    framework.map((data) => (
-                        <img src={data} className="mx-2" alt="language" width='50px' />
-                    ))
-                }
-            </div>
+            <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}>
 
-            <p className="text-center text-3xl mt-16">
-                <FontAwesomeIcon icon={faMusic} className="mx-2" />
-                Favorite Music
-            </p>
-            <BottomLine/>
-            <p className="text-center text-lg mt-4">talk is cheap. show me your playlist !</p>
+                <p className="text-center text-3xl mt-24">
+                    <FontAwesomeIcon className="mx-2" icon={faGamepad}/>
+                    Hobbies
+                    <FontAwesomeIcon className="mx-2" icon={faCode}/>
+                </p>
+                <BottomLine/>
+                <p className="text-center text-lg mt-4">coder and audiophile [newbie] </p>
 
-            <div className="flex items-center mt-4 p-8">
-                <Swiper className="mx-2"
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        dynamicBullets: true,
-                    }}
-                    modules={[Autoplay, Pagination, Navigation]}>
+                <p className="text-center mt-4">I code in : </p>
+                <div className="mt-2 flex place-content-center">
                     {
-                        musicAlbumData.map(({title, artist, url}, i) => (
-                            <SwiperSlide key={i}>
-                                <div className="grid grid-cols-1 sm:flex justify-items-center sm:place-content-center">
-                                    <div>
-                                        <img className="rounded-lg w-36" src={url} alt={title} />
-                                    </div>
-                                        <p 
-                                            className="text-center w-full sm:w-1/6 sm:mx-8 mt-4 mb-8 p-4 rounded-lg text-white bg-gradient-to-r from-purple-300  to-purple-400">
-                                                <span className="text-xl tracking-wide border-b-2">{title}</span> <br /> by <br /> {artist}
-                                        </p>
-                                </div>
-                            </SwiperSlide>
+                        programmingLanguage.map((data) => (
+                            <img src={data} className="mx-2" alt="language" width='50px' />
                         ))
                     }
-                </Swiper>
-            </div>
+                </div>
+                <p className="text-center mt-4">Currently doing on : </p>
+                <div className="mt-2 flex place-content-center">
+                    {
+                        framework.map((data) => (
+                            <img src={data} className="mx-2" alt="language" width='50px' />
+                        ))
+                    }
+                </div>
+                <div className="mt-4 flex text-center place-content-center">
+                    <Link to='/project' className="bg-cyan-300 dark:bg-cyan-500 hover:scale-105 p-4 rounded-lg">
+                        <p>
+                            Looking for my project? <br />
+                            Click Here!
+                        </p>
+                    </Link>
+                </div>
+            </motion.p>
+            
+            <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}>
+                    
+                <p className="text-center text-3xl mt-16">
+                    <FontAwesomeIcon icon={faMusic} className="mx-2" />
+                    Favorite Music
+                </p>
+                <BottomLine/>
+                <p className="text-center text-lg mt-4">talk is cheap. show me your playlist !</p>
+
+                <div className="flex items-center mt-4 p-8">
+                    <Swiper className="mx-2"
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            dynamicBullets: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}>
+                        {
+                            musicAlbumData.map(({title, artist, url}, i) => (
+                                <SwiperSlide key={i}>
+                                    <div className="grid grid-cols-1 sm:flex justify-items-center sm:place-content-center">
+                                        <div>
+                                            <img className="rounded-lg w-36" src={url} alt={title} />
+                                        </div>
+                                            <p 
+                                                className="text-center w-full sm:w-1/6 sm:mx-8 mt-4 mb-8 p-4 rounded-lg text-white bg-gradient-to-r from-purple-300  to-purple-400">
+                                                    <span className="text-xl tracking-wide border-b-2">{title}</span> <br /> by <br /> {artist}
+                                            </p>
+                                    </div>
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
+            </motion.p>
         </div>
     )
 }

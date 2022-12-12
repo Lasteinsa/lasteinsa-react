@@ -4,6 +4,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@500&display=swap');
 
+::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(3, 0, 156);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(112, 0, 0);
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
 }

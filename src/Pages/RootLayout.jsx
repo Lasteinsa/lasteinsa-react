@@ -6,6 +6,7 @@ import { themeAction } from "../store/theme"
 import ToggleTheme from "../components/ToggleTheme"
 import Snowfall from "react-snowfall"
 import { AnimatePresence, motion } from "framer-motion"
+import Footer from "../components/Footer"
 
 const RootLayout = () => {
     const {pathname}    = useLocation()
@@ -47,7 +48,7 @@ const RootLayout = () => {
                         color="#FFA1CF"
                         snowflakeCount={110}/>
             }
-            <div className="py-8 dark:bg-black">
+            <div className="pt-8 dark:bg-black">
                 <Navigation/>
                 <ToggleTheme isDay={isDay} changeTheme={changeTheme} />
                 <main className="mx-8">
@@ -62,6 +63,7 @@ const RootLayout = () => {
                         </motion.div>
                     </AnimatePresence>
                 </main>
+                <Footer/>
             </div>
         </div>
     )
