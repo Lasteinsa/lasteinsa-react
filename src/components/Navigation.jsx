@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faHome, faPencil } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faHome, faPaintBrush, faPencil } from "@fortawesome/free-solid-svg-icons"
 import Collapsible from "react-collapsible"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
@@ -12,6 +12,11 @@ const Navigation = () => {
             name: "Home",
             path: '/home',
             icon: faHome
+        },
+        {
+            name: "Project",
+            path: '/project',
+            icon: faPaintBrush
         },
         {
             name: "About",
