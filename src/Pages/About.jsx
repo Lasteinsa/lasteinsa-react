@@ -58,13 +58,13 @@ const About = ({title}) => {
                             whileInView={{opacity: 1, x:0}}
                             viewport={{ once: true }}
                             className="grid grid-cols-1 sm:grid-cols-2 m-2 py-4 px-2 rounded-xl  
-                                        bg-gradient-to-r from-purple-500 to-pink-500">
+                                        bg-gradient-to-r from-purple-400 to-pink-400">
                             <div className="flex place-content-center py-4 rounded-xl bg-slate-200">
-                                <img className="w-16" src={icon} alt="" />
+                                <img className="w-16" src={icon} />
                             </div>
                             <div className="text-center">
                                 <p className="text-2xl mb-4">{title}</p>
-                                <a target="_blank" className="border-b-4" href={link}>{text}</a>
+                                <a target="_blank" rel="noreferrer" className="border-b-4" href={link}>{text}</a>
                             </div>
                         </motion.div>
                     ))

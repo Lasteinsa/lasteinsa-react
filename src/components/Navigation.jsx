@@ -13,11 +13,11 @@ const Navigation = () => {
             path: '/home',
             icon: faHome
         },
-        {
-            name: "Project",
-            path: '/project',
-            icon: faPaintBrush
-        },
+        // {
+        //     name: "Project",
+        //     path: '/project',
+        //     icon: faPaintBrush
+        // },
         {
             name: "About",
             path: '/about',
@@ -33,9 +33,9 @@ const Navigation = () => {
         <nav className="flex justify-between bg-gradient-to-r mx-8 rounded-xl from-blue-500 to-blue-300">
             <ul className="hidden sm:flex">
                 {
-                    NavbarData.map(({name, path, icon}) => (
-                            <li className="mx-4 my-2 px-4 py-2 rounded-lg text-white">
-                                <NavLink key={name} to={path} className={({isActive}) => isActive? 'px-4 py-2 rounded-lg bg-purple-400' : ''}>
+                    NavbarData.map(({name, path, icon}, key) => (
+                            <li key={key} className="mx-4 my-2 px-4 py-2 rounded-lg text-white">
+                                <NavLink key={name} to={path} className={({isActive}) => isActive? 'px-4 py-2 rounded-lg bg-blue-600' : ''}>
                                     <FontAwesomeIcon className="mr-2" icon={icon}/>
                                     {name}
                                 </NavLink>

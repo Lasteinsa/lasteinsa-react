@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const Project = () => {
     return(
         <div className="dark:text-white">
-            <p className="text-center text-3xl my-8">
+            {/* <p className="text-center text-3xl my-8">
                 <FontAwesomeIcon icon={faPaintBrush} className="mx-2" />
                 Project
             </p>
@@ -44,7 +44,7 @@ const Project = () => {
                         <br />
                         <br />
                         Github Link : 
-                        <a target="_blank" href="https://github.com/Lasteinsa/app_package_gasturah"> Gasturah</a>
+                        <a target="_blank" rel="noreferrer" href="https://github.com/Lasteinsa/app_package_gasturah"> Gasturah</a>
                     </p>
                 </motion.div>
                 <motion.div 
@@ -76,10 +76,10 @@ const Project = () => {
                         <br />
                         <br />
                         Github Link : 
-                        <a target="_blank" href="https://github.com/Lasteinsa/app_timbanganpintar"> Smart Scaling</a>
+                        <a target="_blank" rel="noreferrer" href="https://github.com/Lasteinsa/app_timbanganpintar"> Smart Scaling</a>
                     </p>
                 </motion.div>
-            </div>
+            </div> */}
         </div>
     )
 }

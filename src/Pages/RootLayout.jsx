@@ -30,25 +30,16 @@ const RootLayout = () => {
     return(
         <div ref={rootRef} id='rootLayout' className={`${isDay? '' : 'dark'}`}>
             {
-                !isDay ?
+                !isDay &&
                     <Snowfall
                         style={{
                             position: 'fixed',
                             width: '100vw',
                             height: '100vh',
                         }}
-                        snowflakeCount={100}/>
-                    :
-                    <Snowfall
-                        style={{
-                            position: 'fixed',
-                            width: '100vw',
-                            height: '100vh',
-                        }}
-                        color="#FFA1CF"
-                        snowflakeCount={110}/>
+                        snowflakeCount={70}/>
             }
-            <div className="pt-8 dark:bg-black">
+            <div className="pt-8 bg-slate-50 dark:bg-black">
                 <Navigation/>
                 <ToggleTheme isDay={isDay} changeTheme={changeTheme} />
                 <main className="mx-8">

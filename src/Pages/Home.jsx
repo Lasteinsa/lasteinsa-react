@@ -1,15 +1,13 @@
 import { motion } from "framer-motion"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Navigation, Pagination } from "swiper"
-import { framework, musicAlbumData, programmingLanguage } from "../utilities/Data";
 import BottomLine from "../components/BottomLine"
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import Heading from "../components/Heading";
+import { faAndroid, faReact } from "@fortawesome/free-brands-svg-icons";
+import TextInfo from "../components/TextInfo";
 
 
 const Home = ({title}) => {
@@ -17,69 +15,92 @@ const Home = ({title}) => {
 
     return(
         <div className="dark:text-white">
-            <div className="flex place-content-center my-1">
-                <motion.p
-                    className="text-5xl text-bold border-b-4 border-b-sky-400"
+            <div className="sm:h-96 grid grid-flow-row place-content-center px-8">
+                <motion.div
+                    className="text-xl font-bold text-green-600 dark:bg-white w-fit p-2 rounded-md"
                     transition={{delay: 0.3}}
                     initial={{opacity: 0, y:-50}}
                     whileInView={{opacity: 1, y:0}}
                     viewport={{ once: true }}>
-                        Konnichiwa~
-                </motion.p>
+                        Konnichiwa ~
+                </motion.div>
+                <motion.div
+                    className="text-2xl dark:text-white space-y-4"
+                    transition={{delay: 0.8}}
+                    initial={{opacity: 0, x:50}}
+                    whileInView={{opacity: 1, x:0}}
+                    viewport={{ once: true }}>
+                        <p className="text-3xl font-semibold">I'm Ruby Ahmad Fauzan, </p>
+                        <p className="text-2xl"> <span className="border-b-2 border-blue-400">React JS</span> and Android <span className="border-b-2 border-purple-400">Kotlin</span> Developer</p> 
+                        <p className="text-xl">
+                            Specialize in Web Front End using React JS <FontAwesomeIcon icon={faReact} />, and Modern Android Kotlin for Android <FontAwesomeIcon icon={faAndroid} /> <br />
+                        </p>
+                </motion.div>
             </div>
-            <motion.p
-                className="flex place-content-center text-center my-2 dark:text-white"
-                transition={{delay: 0.8}}
-                initial={{opacity: 0, x:50}}
-                whileInView={{opacity: 1, x:0}}
-                viewport={{ once: true }}>
-                    Welcome to my personal homepage. <br />
-                    Here is a place where I show to the world
-            </motion.p>
 
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-            <motion.p
+            <motion.div
+                className="space-y-4"
                 transition={{delay: 1}}
                 initial={{opacity: 0, x:-50}}
                 whileInView={{opacity: 1, x:0}}
                 viewport={{ once: true }}>
 
-                <p className="text-center text-3xl mt-24">
-                    <FontAwesomeIcon className="mx-2" icon={faGamepad}/>
-                    Hobbies
-                    <FontAwesomeIcon className="mx-2" icon={faCode}/>
-                </p>
+                <Heading>
+                    <FontAwesomeIcon icon={faCode} className="mx-2" />
+                    What I Can Do ?
+                </Heading>
+                
                 <BottomLine/>
-                <p className="text-center text-lg mt-4">coder and audiophile [newbie] </p>
 
-                <p className="text-center mt-4">I code in : </p>
-                <div className="mt-2 flex place-content-center">
-                    {
-                        programmingLanguage.map((data) => (
-                            <img src={data} className="mx-2" alt="language" width='50px' />
-                        ))
-                    }
-                </div>
-                <p className="text-center mt-4">Currently doing on : </p>
-                <div className="mt-2 flex place-content-center">
-                    {
-                        framework.map((data) => (
-                            <img src={data} className="mx-2" alt="language" width='50px' />
-                        ))
-                    }
-                </div>
-                <div className="mt-4 flex text-center place-content-center">
-                    <Link to='/project' className="bg-cyan-300 dark:bg-cyan-500 hover:scale-105 p-4 rounded-lg">
-                        <p>
-                            Looking for my project? <br />
-                            Click Here!
-                        </p>
-                    </Link>
-                </div>
-            </motion.p>
+                <TextInfo>
+                    I like coding and thats what make me here
+                </TextInfo>
 
-            <motion.p
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="m-4 p-8 rounded-sm bg-sky-500 text-white dark:bg-slate-800 space-y-4">
+                        <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png" width="100px" className="bg-slate-100 p-4 rounded-md" />
+                        <p className="text-2xl font-semibold"> Javascript & ReactJS </p>
+                        <div className="space-y-4">
+                            <p> 
+                                I have experience working with both JavaScript and React JS. <br />
+                                I am proficient in writing clean and efficient JavaScript code, 
+                                and have extensive knowledge of the React JS framework, 
+                                I have a strong understanding of how to build scalable and maintainable code using these technologies.
+                            </p>
+                            <ul className="list-disc mx-4">
+                                <li> React Hooks & Custom Hooks </li>
+                                <li> Redux State Manajement </li>
+                                <li> React Router </li>
+                                <li> Material UI </li>
+                                <li> Etc.. </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="m-4 p-8 rounded-sm bg-sky-500 text-white dark:bg-slate-800 space-y-4">
+                        <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/kotlin/kotlin.png" width="100px" className="bg-slate-100 p-4 rounded-md" />
+                        <p className="text-2xl font-semibold"> Kotlin Android </p>
+                        <div className="space-y-4">
+                            <p> 
+                                I have also worked with Android development. <br />
+                                Additionally, I am knowledgeable in using Android Studio. 
+                                Overall, I am capable of building high-quality, maintainable, and scalable Android applications 
+                                using Kotlin and the latest Android development practices
+                            </p>
+                            <ul className="list-disc mx-4">
+                                <li> MVVM Pattern </li>
+                                <li> Dagger Hilt Dependency Injection </li>
+                                <li> Kotlin Coroutine Flow </li>
+                                <li> Etc.. </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </motion.div>
+
+            {/* <motion.div
                 transition={{delay: 0.7}}
                 initial={{opacity: 0, y: -50}}
                 whileInView={{opacity: 1, y: 0}}
@@ -121,7 +142,7 @@ const Home = ({title}) => {
                         }
                     </Swiper>
                 </div>
-            </motion.p>
+            </motion.div> */}
         </div>
     )
 }
