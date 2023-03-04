@@ -58,7 +58,7 @@ const Home = ({title}) => {
                     I like coding and thats what make me here
                 </TextInfo>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="m-4 p-8 rounded-sm bg-sky-500 text-white dark:bg-slate-800 space-y-4">
                         <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png" width="100px" className="bg-slate-100 p-4 rounded-md" />
                         <p className="text-2xl font-semibold"> Javascript & ReactJS </p>
