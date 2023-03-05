@@ -4,10 +4,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faCertificate, faCode, faPalette } from "@fortawesome/free-solid-svg-icons";
 import Heading from "../components/Heading";
 import { faAndroid, faReact } from "@fortawesome/free-brands-svg-icons";
 import TextInfo from "../components/TextInfo";
+import Card from "../components/Home/Card";
+import { certificate, projectList } from "../utilities/Data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper";
+import CardSwipe from "../components/Home/CardSwipe";
 
 
 const Home = ({title}) => {
@@ -17,7 +22,7 @@ const Home = ({title}) => {
         <div className="dark:text-white">
             <div className="sm:h-96 grid grid-flow-row place-content-center px-8">
                 <motion.div
-                    className="text-xl font-bold text-green-600 dark:bg-white w-fit p-2 rounded-md"
+                    className="text-xl font-bold text-green-600 dark:bg-white w-fit dark:p-2 mb-4 rounded-md"
                     transition={{delay: 0.3}}
                     initial={{opacity: 0, y:-50}}
                     whileInView={{opacity: 1, y:0}}
@@ -40,65 +45,142 @@ const Home = ({title}) => {
 
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-            <motion.div
-                className="space-y-4"
-                transition={{delay: 1}}
-                initial={{opacity: 0, x:-50}}
-                whileInView={{opacity: 1, x:0}}
-                viewport={{ once: true }}>
+            <section className="space-y-24">
+                <motion.div
+                    className="space-y-4"
+                    transition={{delay: 1}}
+                    initial={{opacity: 0, x:-50}}
+                    whileInView={{opacity: 1, x:0}}
+                    viewport={{ once: true }}>
 
-                <Heading>
-                    <FontAwesomeIcon icon={faCode} className="mx-2" />
-                    What I Can Do ?
-                </Heading>
-                
-                <BottomLine/>
+                    <Heading>
+                        <FontAwesomeIcon icon={faCode} className="mx-2" />
+                        What I Can Do ?
+                    </Heading>
+                    
+                    <BottomLine/>
 
-                <TextInfo>
-                    I like coding and thats what make me here
-                </TextInfo>
+                    <TextInfo>
+                        I like coding and thats what make me here
+                    </TextInfo>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="m-4 p-8 rounded-sm bg-sky-500 text-white dark:bg-slate-800 space-y-4">
-                        <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png" width="100px" className="bg-slate-100 p-4 rounded-md" />
-                        <p className="text-2xl font-semibold"> Javascript & ReactJS </p>
-                        <div className="space-y-4">
-                            <p> 
-                                I have experience working with both JavaScript and React JS. <br />
-                                I am proficient in writing clean and efficient JavaScript code, 
-                                and have extensive knowledge of the React JS framework, 
-                                I have a strong understanding of how to build scalable and maintainable code using these technologies.
-                            </p>
-                            <ul className="list-disc mx-4">
-                                <li> React Hooks & Custom Hooks </li>
-                                <li> Redux State Manajement </li>
-                                <li> React Router </li>
-                                <li> Material UI </li>
-                                <li> Etc.. </li>
-                            </ul>
-                        </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <Card 
+                            imgUrl={"https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png"}
+                            title={"Javascript & ReactJS"}
+                            lists={[
+                                "React Hooks & Custom Hooks",
+                                "React Router",
+                                "Material UI",
+                                "Etc..."
+                            ]}
+                        >
+                            I have experience working with both JavaScript and React JS. <br />
+                            I am proficient in writing clean and efficient JavaScript code, 
+                            and have extensive knowledge of the React JS framework, 
+                            I have a strong understanding of how to build scalable and maintainable code using these technologies.
+                        </Card>
+                        <Card 
+                            imgUrl={"https://cdn.jsdelivr.net/npm/programming-languages-logos/src/kotlin/kotlin.png"}
+                            title={"Kotlin Android"}
+                            lists={[
+                                "MVVM Pattern",
+                                "Dagger Hilt Dependency Injection",
+                                "Kotlin Coroutine Flow",
+                                "Etc..."
+                            ]}
+                        >
+                            I have also worked with Android development. <br />
+                            Additionally, I am knowledgeable in using Android Studio. 
+                            Overall, I am capable of building high-quality, maintainable, and scalable Android applications 
+                            using Kotlin and the latest Android development practices
+                        </Card>
                     </div>
-                    <div className="m-4 p-8 rounded-sm bg-sky-500 text-white dark:bg-slate-800 space-y-4">
-                        <img src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/kotlin/kotlin.png" width="100px" className="bg-slate-100 p-4 rounded-md" />
-                        <p className="text-2xl font-semibold"> Kotlin Android </p>
-                        <div className="space-y-4">
-                            <p> 
-                                I have also worked with Android development. <br />
-                                Additionally, I am knowledgeable in using Android Studio. 
-                                Overall, I am capable of building high-quality, maintainable, and scalable Android applications 
-                                using Kotlin and the latest Android development practices
-                            </p>
-                            <ul className="list-disc mx-4">
-                                <li> MVVM Pattern </li>
-                                <li> Dagger Hilt Dependency Injection </li>
-                                <li> Kotlin Coroutine Flow </li>
-                                <li> Etc.. </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-            </motion.div>
+                </motion.div>
+
+                <motion.div
+                    className="space-y-4"
+                    transition={{delay: 1}}
+                    initial={{opacity: 0, x:50}}
+                    whileInView={{opacity: 1, x:0}}
+                    viewport={{ once: true }}>
+
+                    <Heading>
+                        <FontAwesomeIcon icon={faPalette} className="mx-2" />
+                        Project
+                    </Heading>
+                    
+                    <BottomLine/>
+
+                    <TextInfo>
+                        Web (React JS) and Android (Kotlin) project
+                    </TextInfo>
+
+                    <Swiper className="mx-2"
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            dynamicBullets: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}>
+                        {
+                            projectList.map(({imgUrl, title, desc, github, demo, stack,}, i) => (
+                                <SwiperSlide key={i}>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 m-4 p-4">
+                                        <CardSwipe 
+                                            imgUrl={imgUrl}
+                                            title={title}
+                                            desc={desc}
+                                            github={github}
+                                            demo={demo}
+                                            stack={stack}
+                                        />
+                                    </div>
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+
+                </motion.div>
+
+                <motion.div
+                    className="space-y-4"
+                    transition={{delay: 1}}
+                    initial={{opacity: 0, x:-50}}
+                    whileInView={{opacity: 1, x:0}}
+                    viewport={{ once: true }}>
+
+                    <Heading>
+                        <FontAwesomeIcon icon={faCertificate} className="mx-2" />
+                        Certificate
+                    </Heading>
+                    
+                    <BottomLine/>
+
+                    <TextInfo>
+                        Web and Android Certificate
+                    </TextInfo>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                        {
+                            certificate.map(({ title, imgUrl }, key) => (
+                                <div key={key} className="p-4 space-y-4">
+                                    <div className="grid grid-flow-row place-content-center">
+                                        <p className="text-xl text-center font-bold">{ title }</p>
+                                        <img className="h-72" src={imgUrl} alt="" />
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                </motion.div>
+            </section>
 
             {/* <motion.div
                 transition={{delay: 0.7}}

@@ -1,5 +1,7 @@
 import { TypeAnimation } from "react-type-animation"
 import { motion } from "framer-motion"
+import Heading from "../components/Heading"
+import BottomLine from "../components/BottomLine"
 
 const About = ({title}) => {
     document.title  = `${title} | Lasteinsa`
@@ -28,7 +30,7 @@ const About = ({title}) => {
     ]
 
     return(
-        <div className="min-h-screen dark:text-white">
+        <div className="min-h-screen space-y-12 dark:text-white">
             <div className="text-center text-5xl text-bold">
                     I am...
                 <TypeAnimation
@@ -40,16 +42,13 @@ const About = ({title}) => {
                     />
             </div>
 
-            <p className="text-center text-3xl mt-12">
+            <Heading>
                 Contact
-            </p>
-            <p className="text-center text-lg mt-2">Stay in touch</p>
+                <BottomLine/>
+                <p className="text-center text-lg mt-2">Stay in touch</p>
+            </Heading>
 
-            <div className="flex justify-center place-items-center mt-4">
-                <img className="w-24 mx-4" src="https://cdn-icons-png.flaticon.com/512/1821/1821283.png" alt="" />
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-8">
                 {
                     aboutInfo.map(({title, icon, text, link}, i) => (
                         <motion.div key={i} 
@@ -57,12 +56,11 @@ const About = ({title}) => {
                             initial={{opacity: 0, x:100}}
                             whileInView={{opacity: 1, x:0}}
                             viewport={{ once: true }}
-                            className="grid grid-cols-1 sm:grid-cols-2 m-2 py-4 px-2 rounded-xl  
-                                        bg-gradient-to-r from-purple-400 to-pink-400">
-                            <div className="flex place-content-center py-4 rounded-xl bg-slate-200">
+                            className="grid grid-cols-1 sm:grid-cols-2 m-2 p-4 rounded-xl bg-slate-600">
+                            <div className="flex place-content-center py-4 rounded-md bg-white">
                                 <img className="w-16" src={icon} />
                             </div>
-                            <div className="text-center">
+                            <div className="text-center text-white">
                                 <p className="text-2xl mb-4">{title}</p>
                                 <a target="_blank" rel="noreferrer" className="border-b-4" href={link}>{text}</a>
                             </div>
